@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b68258;
+    background-size: cover; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+header {
+    background-color: transparent;
+    padding-top: 15px;
+    position: absolute; /* Position it over the showcase image */
+    width: 100%;
+    z-index: 0; /* Ensure it's above the image */
+    text-align: center;
+    
+}
+nav {
+    background-color: rgba(0, 0, 0, 0.6); 
+    border-radius: 25px; /* Rounded corners */
+    display: inline-block; /* Only as wide as it needs to be */
+    padding: 10px 30px; /* Padding inside the navigation */
+    margin: 0 auto; /* Center the navigation */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #b68258;
+    text-decoration: none;
+}
+.corner-design {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #333; /*transparent
+    clip-path: polygon(100% 0, 100% 100%, 0 100%); */
+  }
+  
+  .top-left { top: 0; left: 0; }
+  .top-right { top: 0; right: 0; }
+  .bottom-left { bottom: 0; left: 0; }
+  .bottom-right { bottom: 0; right: 0; }
+  
+  .top-left::before, .top-right::before, .bottom-left::before, .bottom-right::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #b68258; 
+    border-radius: 50%;
+  }
+  
+  .top-left::before { bottom: -50px; right: -50px; }
+  .top-right::before { bottom: -50px; left: -50px; }
+  .bottom-left::before { top: -50px; right: -50px; }
+  .bottom-right::before { top: -50px; left: -50px; }
+
+
+.paintings-listing {
+    text-align: center;
+    padding: 120px;
+}
+
+.paintings-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* This specifies 3 columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+.painting {
+    /* If your painting items are too wide, they won't fit three in a row. You may need to adjust their size. */
+    /* You can also add some padding and a border to each painting for better visual separation */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Optional for styling */
+}
+
+.painting img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional for styling */
+}
+
+.painting h2 {
+    color: #333; /* Or choose a color that fits your design */
+    margin: 10px 0;
+}
+
+.painting p {
+    color: #666; /* Or choose a color that fits your design */
+}
+
+@media (max-width: 600px) {
+    .paintings-container {
+        grid-template-columns: 1fr; /* Stack them on smaller screens */
+    }
+}

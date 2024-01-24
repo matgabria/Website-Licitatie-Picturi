@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #e5e5e5; 
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: transparent;
+    padding-top: 15px;
+    position: absolute; /* Position it over the showcase image */
+    width: 100%;
+    z-index: 0; /* Ensure it's above the image */
+    text-align: center;
+    
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.6); 
+    border-radius: 25px; /* Rounded corners */
+    display: inline-block; /* Only as wide as it needs to be */
+    padding: 10px 30px; /* Padding inside the navigation */
+    margin: 0 auto; /* Center the navigation */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #b68258;
+    text-decoration: none;
+}
+
+#showcase {
+    background: url('coverPhotoMainPage.jpg') no-repeat center center/cover;
+    background-attachment: fixed; 
+    height: 100vh; /* This sets the height to full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+#about, #featured-products {
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+}
+
+#about h2, #featured-products h2 {
+    color: #ffffff; /* Consistent color scheme */
+}
+
+footer {
+    background-color: #b68258;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Add responsive design */
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}

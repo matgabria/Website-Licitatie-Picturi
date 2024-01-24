@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="paginaResetareParolaCSS.css" />
+    <title>Reset Password</title>
+  </head>
+  <body>
+    <div class="corner-design top-left"></div>
+    <div class="corner-design top-right"></div>
+    <div class="corner-design bottom-left"></div>
+    <div class="corner-design bottom-right"></div>
+
+    <div class="reset-container" id="resetContainer">
+      <h2 id="title">Lost your password?</h2>
+      <p class="h3" id="instructions">
+        Enter the email address associated with your account and we'll send you
+        a link to reset your password.
+      </p>
+      <form id="resetForm">
+        <input type="email" name="email" placeholder="email" required />
+        <button type="submit">Continue</button>
+      </form>
+      <div class="login-links">
+        <a class="login-links" href="paignaSignup.html"
+          >Don't have an account? Sign-up
+        </a>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("resetForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          var email = this.querySelector('input[name="email"]').value;
+
+          // Perform your AJAX request here if you need to send the email to the server
+          // ....
+          
+          // Update
+          document.getElementById("title").textContent = "Check your email";
+          document.getElementById("instructions").textContent =
+            "We sent an email to the indicated address: " + email;
+            this.remove();
+        });
+    </script>
+  </body>
+</html>

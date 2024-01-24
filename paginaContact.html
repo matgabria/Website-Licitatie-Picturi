@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="paginaContactCSS.css" />
+  </head>
+  <body>
+    <div class="corner-design top-left"></div>
+    <div class="corner-design top-right"></div>
+    <div class="corner-design bottom-left"></div>
+    <div class="corner-design bottom-right"></div>
+
+    <div class="contact-container">
+      <h2 id="title">Get in Touch</h2>
+      <p class="p" id="instructions">
+        Need to get in touch with us? Please fill out the form with your
+        inquiry.
+      </p>
+      <form id="submitForm">
+        <input type="email" name="email" placeholder="email" required />
+        <textarea
+          name="messageBox"
+          id="messageBox"
+          placeholder="Type your message"
+          required
+        ></textarea>
+        <button type="submit">submit</button>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("submitForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var email = this.querySelector('input[name="email"]').value;
+          var message = this.querySelector('textarea[name="messageBox"]').value;
+
+          document.getElementById("title").textContent = "Thank you";
+          document.getElementById("instructions").textContent =
+            "We will be in touch shortly";
+
+          this.remove();
+        });
+    </script>
+  </body>
+</html>
